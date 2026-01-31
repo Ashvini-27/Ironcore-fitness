@@ -7,7 +7,6 @@ const Navbar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
-  
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = 0.25; 
@@ -38,14 +37,14 @@ const Navbar = () => {
         />
       </Link>
 
-      <div className="flex gap-8 text-xl items-center mt-5 sm:mt-0 font-semibold text-gray-700">
+      {/* UPDATED LINE BELOW: Added 'flex-wrap', 'gap-4', and 'text-base' for mobile */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-base sm:text-xl items-center mt-4 sm:mt-0 font-semibold text-gray-700">
         
         <Link to="/" className="hover:text-[#6366F1] transition-colors">Home</Link>
         <Link to="/exercises" className="hover:text-[#6366F1] transition-colors">Exercises</Link>
         <Link to="/bmi" className="hover:text-[#6366F1] transition-colors">BMI</Link>
         <Link to="/calories" className="hover:text-[#6366F1] transition-colors">Calories</Link>
 
-       
         <button 
           onClick={toggleMusic}
           className={`relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-500 shadow-md ${
